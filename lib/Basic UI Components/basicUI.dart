@@ -125,7 +125,7 @@ String FindImage(String input){
   'Kotlin': 'assets/images/k.jpeg',
   'Python':'assets/images/python.jpg',
   'C':'assets/images/c.jpg',
-  'C++':'assets/images/cpp.png',
+  'C++':'assets/images/cpp.jpg',
   'Web Develpoment':'assets/images/wd.jpeg',
   'Data Analysis':'assets/images/da.jpg',
   'Machine Learning':'assets/images/ML.jpg',

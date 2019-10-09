@@ -125,7 +125,10 @@ class _LoginPageState extends State<LoginPage> {
       height: 10.0,
     );
 
-    return Scaffold(
+    return WillPopScope(
+        onWillPop: () async => false,
+
+        child:Scaffold(
         body: SingleChildScrollView(
       child: Center(
         child: Container(
@@ -166,7 +169,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-    ));
+    )));
   }
 
   // Authenticates sign in from Firebase

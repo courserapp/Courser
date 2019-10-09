@@ -134,7 +134,9 @@ class _SignUpPageState extends State<SignUpPage> {
       height: 10.0,
     );
 
-    return Scaffold(
+    return WillPopScope(
+        onWillPop: () async => false,
+        child:Scaffold(
         body: SingleChildScrollView(
       child: Center(
         child: Container(
@@ -172,7 +174,7 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
         ),
       ),
-    ));
+    )));
   }
 
 // Creates new account on firebase

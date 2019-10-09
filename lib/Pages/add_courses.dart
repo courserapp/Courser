@@ -221,7 +221,9 @@ class _AddCourseState extends State<AddCourses> {
     );
 
     //ButtonGen(context, 'SUBMIT', Colors.white, Colors.deepPurple);
-    return Scaffold(
+    return WillPopScope(
+        onWillPop: () async => false,
+        child:Scaffold(
         key: _scaffoldKey,
         appBar: topBar,
         drawer: AppDrawer(this.currUser),
@@ -259,6 +261,6 @@ class _AddCourseState extends State<AddCourses> {
                           sButton
                         ],
                       ),
-                    )))));
+                    ))))));
   }
 }
