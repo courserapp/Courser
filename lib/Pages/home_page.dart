@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 // From Courser
 import "package:courser/Basic UI Components/drawer.dart";
@@ -105,6 +106,23 @@ class _MyHomePageState extends State<MyHomePage> {
       ],
     );
 
+    Widget CarouselCards(List <String> itemList){
+      return CarouselSlider( height: 400.0,
+        items: [1,2,3,4,5].map((i) {
+          return Builder(
+            builder: (BuildContext context) {
+              return Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: BoxDecoration(
+                      color: Colors.amber
+                  ),
+                  child: Text('text $i', style: TextStyle(fontSize: 16.0),)
+              );
+            },
+          );
+        }).toList(),);
+    }
     // Generates grid of courses taking input the list of courses
 
     // Adds title to grid of courses
@@ -140,13 +158,15 @@ class _MyHomePageState extends State<MyHomePage> {
       "Python 3 Programming Specialization",
     ];
 
-    return Scaffold(
+    return WillPopScope(
+        onWillPop: () async => false,
+        child:Scaffold(
         key: _scaffoldKey,
         appBar: topBar,
         drawer: AppDrawer(this.currUser),
         body: Padding(
             padding: EdgeInsets.all(15.0),
-            child: CourseCards(context, c1, this.currUser)));//TitleCourseCards("Recommendations for you", itemList)));
+            child: CourseCards(context, c1, this.currUser))));//TitleCourseCards("Recommendations for you", itemList)));
   }
 }
 
